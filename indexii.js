@@ -11,10 +11,8 @@ app.use(express.json())
 // Middleware para parsear los datos del formulario
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Middleware para servir archivos estáticos
-app.use(express.static('public'))
 
-// Middleware a nivel de aplicación
+//Middleware a nivel de aplicación
 app.use((req, res, next)=>{
     /*
     console.log(req)
@@ -27,13 +25,13 @@ app.use((req, res, next)=>{
     next()
 })
 
-// Rutas
+//Rutas
 routerTodos(app)
 
 app.set('views', './src/views')
 app.set('view engine', 'ejs')
 
-// Levantando el servidor para escuchar por el puerto 3000
+//Levantando el servidor para escuchar por el puerto 3000
 app.listen(PORT, () => {
     console.log('Listening on port: ' + PORT);
 })

@@ -6,6 +6,7 @@ const todosRouter = require('./todos.router')
 function routerTodos(app){
     const router = express.Router()
     app.use('/', router) 
+    router.use('/todos', todosRouter);
     router.use('/todospanel', todosRouter)
     router.use('/api/v1/files/todos', todosFilesRouter)
     router.use('/api/v1/todos', todosApiRouter)
